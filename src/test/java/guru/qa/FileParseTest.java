@@ -71,7 +71,7 @@ public class FileParseTest {
 
     @DisplayName("тест JSON")
     @Test
-    void jsonJackson() throws IOException{
+    void jsonJackson() throws Exception{
 
         InputStream is = classLoader.getResourceAsStream("SteamUser.json");
         ObjectMapper mapper = new ObjectMapper();
