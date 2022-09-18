@@ -75,6 +75,7 @@ public class FileParseTest {
 
         InputStream is = classLoader.getResourceAsStream("SteamUser.json");
         ObjectMapper mapper = new ObjectMapper();
+        //без следующих двух строчек выдает ошибку
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         mapper.setVisibility(VisibilityChecker.Std.defaultInstance().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
         SteamUser jsonObject = mapper.readValue(is, SteamUser.class);
